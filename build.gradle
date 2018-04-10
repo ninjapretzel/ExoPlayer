@@ -19,6 +19,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.0'
         classpath 'com.novoda:bintray-release:0.8.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
     // Workaround for the following test coverage issue. Remove when fixed:
     // https://code.google.com/p/android/issues/detail?id=226070
@@ -33,6 +34,7 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven { url 'https://www.jitpack.io' }
     }
     project.ext {
         exoplayerPublishEnabled = true
@@ -43,6 +45,7 @@ allprojects {
         }
         buildDir = "${externalBuildDir}/${project.name}"
     }
+
 }
 
 apply from: 'javadoc_combined.gradle'
